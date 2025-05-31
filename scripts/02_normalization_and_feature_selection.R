@@ -32,3 +32,5 @@ LabelPoints(
   max.overlaps = 20
 )
 
+#Save the Seurat object
+saveRDS(melanoma_seurat, file = "results/melanoma_seurat_normalized.rds")

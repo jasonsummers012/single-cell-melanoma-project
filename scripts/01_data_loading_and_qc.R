@@ -36,8 +36,8 @@ VlnPlot(
   ncol = 3
 )
 
-#Save the Seurat object
-saveRDS(melanoma_seurat, file = "results/melanoma_seurat_filtered.rds")
-
 #Plot results for MITF expression
 VlnPlot(melanoma_seurat, features = "MITF")
+
+#Save the Seurat object
+saveRDS(melanoma_seurat, file = "results/melanoma_seurat_filtered.rds")
