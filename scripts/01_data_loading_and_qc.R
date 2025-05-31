@@ -21,7 +21,7 @@ melanoma_seurat[["percent.mt"]] = PercentageFeatureSet(
   pattern = "^MT-"
 )
 
-#Filter for more than 200 genes, less than 500 genes, and less than 5% mitochondrial RNA
+#Filter for more than 200 genes, less than 2500 genes, and less than 5% mitochondrial RNA
 melanoma_seurat = subset(
   melanoma_seurat,
   subset = nFeature_RNA > 200 &
@@ -36,5 +36,8 @@ VlnPlot(
   ncol = 3
 )
 
-#Save the results
-saveRDS(melanoma_seurat, file = "results/melanoma_seruat_filtered.rds")
+#Save the Seurat object
+saveRDS(melanoma_seurat, file = "results/melanoma_seurat_filtered.rds")
+
+#Plot results for MITF expression
+VlnPlot(melanoma_seurat, features = "MITF")
